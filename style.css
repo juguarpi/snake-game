@@ -1,0 +1,304 @@
+*,
+*::after,
+*::backdrop {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  font-size: 1.4rem;
+  color: darkslategray;
+  padding: 3rem;
+  background-color: lightblue;
+}
+
+.container {
+  padding: 2rem;
+  width: 80rem;
+  height: 60rem;
+  margin: auto;
+  background-image: linear-gradient(to right bottom, lightblue, cadetblue);
+  box-shadow: 0 2rem 6rem 0.5rem rgba(101, 90, 86, 0.2);
+  border-radius: 1rem;
+
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+}
+
+/* --------------------------------------Left Section------------------------------- */
+.section__left {
+  position: relative;
+}
+
+.pause-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.pause-message p {
+  margin-bottom: 2rem;
+}
+
+.pause-message--shown {
+  visibility: visible;
+  opacity: 0.9;
+}
+
+.display__current-game {
+  /* color: white; */
+  color: darkslategray;
+  padding-bottom: 1rem;
+}
+
+.current-game {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.display__score {
+  margin-right: 3rem;
+}
+
+.display__time {
+  margin-right: 5rem;
+}
+.score {
+  color: red;
+  display: inline-block;
+  width: 3rem;
+  text-align: center;
+}
+
+.score--animation {
+  animation: enlarge 0.5s;
+}
+
+@keyframes enlarge {
+  0% {
+    transform: scale(0.1);
+  }
+  50% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.game-frame {
+  border: 1.5px white solid;
+  border-radius: 0.8rem;
+  /* background-image: linear-gradient(to right, lightblue, cadetblue); */
+
+  width: 95%;
+  height: 95%;
+  margin: auto;
+  /* box-shadow: 0 1rem 2rem grey; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+}
+.start-message,
+.stop-message {
+  color: darkslategray;
+  font-size: 1.6rem;
+  max-width: 60%;
+}
+
+.start-message p,
+.stop-message p {
+  margin-bottom: 2rem;
+}
+
+.apple {
+  background-color: red;
+}
+
+.snake {
+  background-color: lawngreen;
+  box-shadow: 0 1rem 2rem lawngreen;
+  border: gray solid 0.2px;
+}
+
+.snake--head {
+  background-color: green;
+}
+
+/* --------------------------------------Right Section------------------------------- */
+
+.header {
+  padding: 1rem 0;
+}
+
+.heading-1 {
+  color: darkslategray;
+  font-size: 2.3rem;
+  font-weight: 100;
+}
+
+.history {
+  padding: 1rem 0;
+}
+
+.btn-clear-history {
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  color: darkslategray;
+  margin-top: 1rem;
+}
+
+.btn-clear-history:hover {
+  transform: translateY(-0.3rem);
+}
+
+.btn-clear-history:active {
+  transform: translateY(-0.1rem);
+}
+
+.btn-clear-history:focus {
+  outline: none;
+}
+
+.control {
+  margin-top: 3rem;
+}
+
+.difficulty-level-box {
+  margin-bottom: 1rem;
+}
+
+.heading-2 {
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+
+.difficulty-radio-buttons {
+  padding: 1rem 0;
+}
+
+.radio-container {
+  display: block;
+}
+
+.radio-container:hover {
+  color: white;
+}
+
+.direction-buttons {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    ". up ."
+    "left . right"
+    ". down .";
+  margin-bottom: 1rem;
+}
+
+.direction-button {
+  height: 3rem;
+  border: none;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.direction-button:active {
+  transform: translateY(0.2rem);
+}
+
+.btn-up {
+  grid-area: up;
+}
+
+.btn-left {
+  grid-area: left;
+}
+
+.btn-right {
+  grid-area: right;
+}
+
+.btn-down {
+  grid-area: down;
+}
+
+.game-buttons {
+  padding: 3rem 0 0 0;
+  position: relative;
+
+  margin-top: 3rem;
+  margin-left: 3rem;
+}
+
+.btn {
+  padding: 0.8rem 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: block;
+  min-width: 8rem;
+  box-shadow: 0 1rem 2rem grey;
+  margin-bottom: 1.5rem;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.1s;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem grey;
+}
+
+.btn:active {
+  transform: translateY(-0.1rem);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn-start {
+  background-color: lightseagreen;
+}
+
+.btn-stop {
+  background-color: lightsalmon;
+}
+
+.btn-pause {
+  background-color: darkgoldenrod;
+  position: absolute;
+  top: 3rem;
+}
+
+.btn-paused {
+  background-color: maroon;
+}
+
+.btn-shown {
+  visibility: visible;
+  opacity: 1;
+}

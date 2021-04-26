@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+    <title>Snake Game</title>
+</head>
+<body>
+    <div class="container">
+        <div class="section__left">
+
+            <div class="pause-message">
+           
+                <p>
+                    -------------------------------
+            </p>
+                <p>
+                    Game is paused.
+            </p>
+            <p>
+            Please click "RESUME" to continue the game 
+            </p>
+            <p>
+                or click "STOP" to stop this game 
+            </p>
+
+            <p>
+                -------------------------------
+        </p>
+
+
+
+
+            </div>
+
+            <div class="display__current-game">
+                <div class="current-game">
+                    <div class="display__score"> Score : 
+                        <span class="score">0</span>
+                    </div>
+                    <div class="display__time"> Time : 
+                        <span class="time">00:00:00</span>
+                    </div>
+
+                    <div class="display__difficulty-level"> Speed : 
+                        <span class="difficulty-level">MEDIUM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="game-frame"> 
+                <div class="start-message">
+
+                    <p>
+                        -------------------------------
+                    </p>
+                    
+                    <p>
+                        Please click "START" to start a new game.
+                        </p>
+                        <p>
+                        You may use Keyboard "← ↑ → ↓" or "W,A,S,D" Keys or the Control keys on the right to change snake moving direction.  
+                        </p>
+
+                        <p>
+                    You may also use Keyboard "Space" key to pause the game.  
+                        </p>
+        
+                        <p>
+                            -------------------------------
+                        </p>
+                  
+                </div>
+                <!-- <div class="element" id="0--0"></div> -->
+            </div>    
+
+            
+        </div>
+
+        <div class="section__right">
+            <header class="header">
+                <h1 class="heading-1">Snake Game</h1>
+            </header>
+
+            <div class="history">
+                <div class="display__total-played"> Total Game : 
+                    <span class="total-played-number">0</span>
+                </div>
+                <div class="display__highest_score"> Best Score : 
+                    <span class="highest_score">0</span>
+                </div>
+                <button class="btn-clear-history">Clear History</button>
+            </div>
+
+            <div class="control">
+                <div class="difficulty-level-box">
+                    <h2 class="heading-2 difficulty-box-heading">Choose Speed</h2>
+                    <div class="difficulty-radio-buttons">
+                        <label class="radio-container">
+                            <input type="radio"  name="difficulty" id="slow"> Slow /Easy
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" checked="checked" name="difficulty" id="medium"> Medium
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="difficulty" id="fast"> Fast /Difficult
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div> 
+    <div class="direction-control">
+        <h2 class="heading-2 direction-control-heading">Moving Direction</h2>
+        <div class="direction-buttons">
+            <button class="direction-button btn-up" direction="N">↑</button>
+            <button class="direction-button btn-left" direction="W">←</button>
+            <button class="direction-button btn-right" direction="E">→</button>
+            <button class="direction-button btn-down" direction="S">↓</button>
+        </div>
+
+    </div>
+
+                <div class="game-buttons">
+                    <button class="btn btn-start">Start</button>
+                    <button class="btn btn-pause">Pause</button>
+                    <button class="btn btn-stop">Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
