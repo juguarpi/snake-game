@@ -141,7 +141,7 @@ function creatRamdonElement (){
     while(matched){
     elementX = Math.floor(Math.random() * numberOFColumn);
     elementY = Math.floor(Math.random() * numberOfRow);
-    if (snake.body.some((element)=>(element.x!= elementX || element.y!=elementY))) matched = false;
+    if (snake.body.every((element)=>(element.x!= elementX || element.y!=elementY))) matched = false;
     }
     return new Element(elementX, elementY);
 }
