@@ -313,7 +313,7 @@ function startGame(){
         snake.running = true; 
         renderStartingUI()
         renderGameButtons()
-        console.log("start");
+
         // setUpKeyEvent();
         clearInterval(controlTimer);
         setUpRealTimeMonitorControl()
@@ -418,10 +418,10 @@ function changeDifficultyLevel(id){
 function setUpKeyEvent(){
  
     document.addEventListener("keydown", (e)=>{    
-        console.log(e.code);
+  
         let direction;
         if (e.code === 'Space') {
-            console.log("space clicked")
+         
             pauseOrResumeGame();
             return;
         }
