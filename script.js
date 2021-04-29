@@ -313,7 +313,8 @@ function startGame(){
         snake.running = true; 
         renderStartingUI()
         renderGameButtons()
-        setUpKeyEvent();
+        console.log("start");
+        // setUpKeyEvent();
         clearInterval(controlTimer);
         setUpRealTimeMonitorControl()
         clearInterval(durationTimer)
@@ -352,6 +353,7 @@ function stopGame(){
 function pauseOrResumeGame(){
     if(!snake.running) return; 
     gamePaused=!gamePaused;
+    console.log(gamePaused);
     if (gamePaused) {
         displayGamePaused();
         pauseGameDuration()
@@ -414,11 +416,17 @@ function changeDifficultyLevel(id){
 
 
 function setUpKeyEvent(){
-    let direction;
+ 
     document.addEventListener("keydown", (e)=>{    
-        if (e.code === 'Space') pauseOrResumeGame();
-        if (e.key === 'ArrowLeft' || e.key === 'a')  direction = "W";
-        else if (e.key === 'ArrowUp' || e.key === 'w' ) direction = "N";
+        console.log(e.code);
+        let direction;
+        if (e.code === 'Space') {
+            console.log("space clicked")
+            pauseOrResumeGame();
+            return;
+        }
+        else if (e.key === 'ArrowLeft' || e.key === 'a')  direction = "W";
+        else if (e.key === 'ArrowUp' || e.key === 'w' )  direction = "N";
         else if (e.key === 'ArrowDown' || e.key === 's' ) direction = "S";
         else if (e.key === 'ArrowRight' || e.key === 'd' ) direction = "E";
         else return; 
@@ -426,6 +434,7 @@ function setUpKeyEvent(){
     })
 
     document.querySelector('.direction-buttons').addEventListener("click", e=>{
+        let direction;
         if(e.target.classList.contains('direction-button')){
             direction = e.target.getAttribute('direction')
             snake.changeDirection(direction); 
@@ -453,7 +462,8 @@ function init(){
     apple = creatRamdonElement();
     readHistory();
     renderHistory();
-    renderGameButtons()
+    renderGameButtons();
+    setUpKeyEvent();
 }
 
 init(); 
